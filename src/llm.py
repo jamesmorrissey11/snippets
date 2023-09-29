@@ -96,3 +96,11 @@ def build_retriever(model_dir):
         search_kwargs={"k": 3},
     )
     return retriever
+
+
+def write_documents_to_json(docs: List[Document], json_path):
+    split_json = [
+        {"page_content": d.page_content, "metadata": d.metadata} for d in docs
+    ]
+    with open(json_path, "w") as f:
+        json.dump(split_json, f)
