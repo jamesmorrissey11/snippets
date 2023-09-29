@@ -42,11 +42,3 @@ def evaluate_classifiers(x_train, y_train, classifiers):
         print(f"Average Precision: {avg_precision:.4f}")
         print(f"Average Recall: {avg_recall:.4f}")
         print("-----------------------")
-
-
-def format_classifier_metrics(clf_name, avg_accuracy, avg_precision, avg_recall):
-    print(f"Classifier: {clf_name}")
-    print(f"Average Accuracy: {avg_accuracy:.4f}")
-    print(f"Average Precision: {avg_precision:.4f}")
-    print(f"Average Recall: {avg_recall:.4f}")
-    print("-----------------------")
