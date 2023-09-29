@@ -1,10 +1,17 @@
 import argparse
 import json
+import logging
 import os
 import warnings
 from datetime import datetime
 
 import pypdf
+
+
+def create_logger():
+    my_logger = logging.getLogger()
+    my_logger.setLevel(logging.INFO)
+    return my_logger
 
 
 def parse_args():
@@ -48,9 +55,3 @@ def pdf_to_pages(file):
 
 def mute_warnings():
     warnings.simplefilter(action="ignore", category=FutureWarning)
-
-
-def remove_patterns(text, patterns_to_remove):
-    for pattern in patterns_to_remove:
-        text = text.replace(pattern, "")
-    return text
